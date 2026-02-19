@@ -1,0 +1,52 @@
+<div style="padding: 20px;">
+  <h2>Domain Engelleme Paneli</h2>
+
+  <form [formGroup]="domainForm" (ngSubmit)="addDomain()">
+    <label>Engellenecek Domain:</label><br>
+    <input type="text" formControlName="domainInput" placeholder="örneğin: youtube.com" style="padding: 5px; width: 250px;">
+    <button type="submit" [disabled]="!domainForm.valid" style="padding: 5px 15px; cursor: pointer;">Ekle</button>
+
+    <div *ngIf="domainForm.get('domainInput')?.invalid && (domainForm.get('domainInput')?.dirty || domainForm.get('domainInput')?.touched)" 
+         style="color: red; font-size: 12px; margin-top: 5px;">
+      <span *ngIf="domainForm.get('domainInput')?.errors?.['required']">Bu alan boş bırakılamaz.</span>
+      <span *ngIf="domainForm.get('domainInput')?.errors?.['pattern']">Lütfen geçerli bir domain formatı girin (site.com gibi).</span>
+    </div>
+    <div *ngIf="responseMessage" 
+         class="alert mt-3 mb-3" 
+         [ngClass]="isSuccess ? 'alert-success' : 'alert-danger'" 
+         role="alert" 
+         style="max-width: 500px; position: relative; padding: 1rem;">
+      
+      <strong>{{ isSuccess ? '✅ Başarılı:' : '❌ Hata:' }}</strong> 
+      {{ responseMessage }}
+    <button type="button" class="btn-close float-end" aria-label="Close" (click)="responseMessage = ''" 
+      style="border: none; background: transparent; cursor: pointer; font-weight: bold;">X</button>
+</div>
+  </form>
+
+  <hr>
+
+  <h3>Engelli Domainler Listesi</h3>
+  <table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse; text-align: left;">
+    <thead>
+      <tr style="background-color: #f2f2f2;">
+        <th>Sıra</th>
+        <th>Domain Adı</th>
+        <th>Engellenme Tarihi</th> <th>İşlem</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let domain of domains; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ domain.domainName }}</td> 
+        <td>{{ domain.appliedAt | date:'dd.MM.yyyy HH:mm' }}</td>
+        <td>
+          <button (click)="removeDomain(domain.domainName)" 
+                  style="color:white; background-color: #dc3545; border: none; padding: 5px 10px; cursor: pointer; border-radius: 4px;">
+            Kaldır
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
