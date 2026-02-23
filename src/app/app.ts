@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { DomainListComponent } from './domain-list/domain-list';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,DomainListComponent],
+  imports: [DomainListComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

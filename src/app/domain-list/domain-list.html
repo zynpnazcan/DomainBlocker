@@ -1,52 +1,58 @@
-<div style="padding: 20px;">
-  <h2>Domain Engelleme Paneli</h2>
+<div class="container mt-4">
+  <div *ngIf="responseMessage" [class]="isSuccess ? 'alert alert-success' : 'alert alert-danger'" role="alert">
+    {{ responseMessage }}
+  </div>
 
-  <form [formGroup]="domainForm" (ngSubmit)="addDomain()">
-    <label>Engellenecek Domain:</label><br>
-    <input type="text" formControlName="domainInput" placeholder="örneğin: youtube.com" style="padding: 5px; width: 250px;">
-    <button type="submit" [disabled]="!domainForm.valid" style="padding: 5px 15px; cursor: pointer;">Ekle</button>
+  <mat-card class="p-4 shadow-sm">
+    <mat-card-header>
+      <mat-card-title class="mb-3">{{ 'DOMAIN_PAGE.TITLE' | translate }}</mat-card-title>
+    </mat-card-header>
 
-    <div *ngIf="domainForm.get('domainInput')?.invalid && (domainForm.get('domainInput')?.dirty || domainForm.get('domainInput')?.touched)" 
-         style="color: red; font-size: 12px; margin-top: 5px;">
-      <span *ngIf="domainForm.get('domainInput')?.errors?.['required']">Bu alan boş bırakılamaz.</span>
-      <span *ngIf="domainForm.get('domainInput')?.errors?.['pattern']">Lütfen geçerli bir domain formatı girin (site.com gibi).</span>
-    </div>
-    <div *ngIf="responseMessage" 
-         class="alert mt-3 mb-3" 
-         [ngClass]="isSuccess ? 'alert-success' : 'alert-danger'" 
-         role="alert" 
-         style="max-width: 500px; position: relative; padding: 1rem;">
-      
-      <strong>{{ isSuccess ? '✅ Başarılı:' : '❌ Hata:' }}</strong> 
-      {{ responseMessage }}
-    <button type="button" class="btn-close float-end" aria-label="Close" (click)="responseMessage = ''" 
-      style="border: none; background: transparent; cursor: pointer; font-weight: bold;">X</button>
-</div>
-  </form>
+    <mat-card-content>
+      <form [formGroup]="domainForm" (ngSubmit)="addDomain()" class="d-flex gap-2 align-items-center">
+        <mat-form-field appearance="outline" class="flex-grow-1">
+          <mat-label>{{ 'DOMAIN_PAGE.INPUT_LABEL' | translate }}</mat-label>
+          <input matInput 
+                 formControlName="domainInput" 
+                 [placeholder]="'DOMAIN_PAGE.PLACEHOLDER' | translate"
+                 (input)="domainForm.get('domainInput')?.markAsTouched()"> <mat-error *ngIf="domainForm.get('domainInput')?.hasError('required')">
+            {{ 'DOMAIN_PAGE.MESSAGES.REQUIRED_FIELD' | translate }}
+          </mat-error>
+          <mat-error *ngIf="domainForm.get('domainInput')?.hasError('pattern')">
+            {{ 'DOMAIN_PAGE.MESSAGES.INVALID_FORMAT' | translate }}
+          </mat-error>
+        </mat-form-field>
 
-  <hr>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!domainForm.valid" style="height: 56px; margin-bottom: 22px;">
+          {{ 'DOMAIN_PAGE.ADD_BTN' | translate }}
+        </button>
+      </form>
 
-  <h3>Engelli Domainler Listesi</h3>
-  <table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse; text-align: left;">
-    <thead>
-      <tr style="background-color: #f2f2f2;">
-        <th>Sıra</th>
-        <th>Domain Adı</th>
-        <th>Engellenme Tarihi</th> <th>İşlem</th> 
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let domain of domains; let i = index">
-        <td>{{ i + 1 }}</td>
-        <td>{{ domain.domainName }}</td> 
-        <td>{{ domain.appliedAt | date:'dd.MM.yyyy HH:mm' }}</td>
-        <td>
-          <button (click)="removeDomain(domain.domainName)" 
-                  style="color:white; background-color: #dc3545; border: none; padding: 5px 10px; cursor: pointer; border-radius: 4px;">
-            Kaldır
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+      <table mat-table [dataSource]="domains" class="w-100 mt-4 mat-elevation-z1">
+        <ng-container matColumnDef="domainName">
+          <th mat-header-cell *matHeaderCellDef> {{ 'DOMAIN_PAGE.TABLE.COL_DOMAIN' | translate }} </th>
+          <td mat-cell *matCellDef="let element"> {{ element.domainName }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="blockedAt">
+          <th mat-header-cell *matHeaderCellDef> {{ 'DOMAIN_PAGE.TABLE.COL_DATE' | translate }} </th>
+          <td mat-cell *matCellDef="let element"> 
+            {{ element.appliedAt | date:'dd.MM.yyyy HH:mm' }} 
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> {{ 'DOMAIN_PAGE.TABLE.COL_ACTIONS' | translate }} </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button color="warn" (click)="removeDomain(element)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="['domainName', 'blockedAt', 'actions']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['domainName', 'blockedAt', 'actions'];"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
 </div>
