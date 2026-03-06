@@ -12,11 +12,9 @@ export class DomainService {
     return this.http.get<Domain[]>(`${this.apiUrl}/all`);
   }
 
-  
   blockDomains(domain: Domain): Observable<any> {
    const requestBody = {
     domains: [domain.domainName], 
-    
   };
     return this.http.post(this.apiUrl, requestBody);
   }

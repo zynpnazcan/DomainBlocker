@@ -7,7 +7,6 @@ mat-card-header {
   border-radius: 4px 4px 0 0;
 }
 
-
 mat-card {
   border: 1px solid #e0e0e0;
   border-radius: 8px !important;
@@ -25,11 +24,11 @@ mat-card {
   border-bottom: 2px solid #dee2e6 !important;
 }
 
-
 .mat-mdc-row:hover {
   background-color: #f1f4f8;
   cursor: default;
 }
+
 .mat-mdc-header-cell {
   background-color: #f8f9fa !important; 
   color: #003366 !important; 
@@ -45,3 +44,35 @@ mat-card {
   font-size: 14px;
 }
 
+.language-container{
+  display: flex;
+  gap:12px;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+
+}
+
+.lang-btn {
+  min-width: 50px;
+  height: 32px;
+  border-radius: 20px; 
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.alert-banner {
+  background-color: #d4edda; 
+  color: #155724;          
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeIn 0.5s;    
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

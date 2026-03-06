@@ -1,0 +1,31 @@
+{
+  "DOMAIN_PAGE": {
+    "TITLE": "Domain Blocking System",
+    "INPUT_LABEL": "Enter Domain Name",
+    "PLACEHOLDER": "e.g., facebook.com",
+    "ADD_BTN": "Add to List",
+    "MESSAGES": {
+     "SUCCESS_ADD": "Domain successfully blocked!",
+      "ERROR_ALREADY_EXISTS": "This domain is already in the block list!",
+    "GENERIC_ERROR": "An error occurred.",
+      "ERROR_ADD": "An error occurred during the process!",
+      "SUCCESS_DELETE": "Block successfully removed for {{domain}}.",
+      "ERROR_DELETE": "An error occurred while removing the block!",
+       "REQUIRED_FIELD":"This field cannot be empty!",
+       "INVALID_FORMAT": "Invalid domain format!",
+      "CONFIRM_DELETE": "Are you sure you want to unblock {{domain}}?",
+      "SUCCESS_SERVER_UPDATED": "Server updated.",
+      "ERROR_LABEL": "Error",
+      "SERVER_FAILED": "Server error occurred."
+    },
+    "CONFIRM_DIALOG": {
+    "YES": "Yes, Delete",
+    "NO": "No"
+  },
+    "TABLE": {
+      "COL_DOMAIN": "Blocked Domain Name",
+      "COL_DATE": "Block Date",
+      "COL_ACTIONS": "Actions"
+    }
+  }
+}

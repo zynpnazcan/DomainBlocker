@@ -6,17 +6,26 @@
     "ADD_BTN": "Listeye Ekle",
     "MESSAGES": {
       "SUCCESS_ADD": "Domain başarıyla engellendi!",
+      "ERROR_ALREADY_EXISTS": "Bu domain zaten engelli listesinde bulunuyor!",
+    "GENERIC_ERROR": "Bir hata oluştu.",
       "ERROR_ADD": "İşlem sırasında bir hata oluştu!",
       "REQUIRED_FIELD": "Bu alan boş bırakılamaz!",
       "INVALID_FORMAT": "Geçersiz domain formatı!",
       "CONFIRM_DELETE": "{{domain}} alan adının engelini kaldırmak istediğinize emin misiniz?",
       "SUCCESS_DELETE": "{{domain}} için engel başarıyla kaldırıldı.",
-      "ERROR_DELETE": "Engel kaldırılırken bir hata oluştu!"
+      "ERROR_DELETE": "Engel kaldırılırken bir hata oluştu!",
+      "SUCCESS_SERVER_UPDATED": "Sunucu güncellendi.",
+      "ERROR_LABEL": "Hata",
+      "SERVER_FAILED": "Sunucu hatası oluştu. "
     },
     "TABLE": {
       "COL_DOMAIN": "Engellenmiş Alan Adı",
       "COL_DATE": "Engellenme Tarihi",
       "COL_ACTIONS": "İşlemler"
+    },
+    "CONFIRM_DIALOG": {
+      "YES": "Evet, Sil",
+      "NO": "Hayır"
     }
   }
 }

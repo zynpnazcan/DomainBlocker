@@ -1,0 +1,13 @@
+<h2 mat-dialog-title style="color: #d32f2f;">⚠️ {{ 'DOMAIN_PAGE.TITLE' | translate }}</h2> <mat-dialog-content>
+  <p>{{ data.message }}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>
+    {{ 'DOMAIN_PAGE.CONFIRM_DIALOG.NO' | translate }}
+  </button>
+  
+  <button mat-flat-button color="warn" [mat-dialog-close]="true">
+    {{ 'DOMAIN_PAGE.CONFIRM_DIALOG.YES' | translate }}
+  </button>
+</mat-dialog-actions>

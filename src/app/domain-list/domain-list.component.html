@@ -1,12 +1,20 @@
 <div class="container mt-4">
-  <div *ngIf="responseMessage" [class]="isSuccess ? 'alert alert-success' : 'alert alert-danger'" role="alert">
-    {{ responseMessage }}
-  </div>
-
+ <div *ngIf="responseMessage" class="alert-banner">
+  {{ responseMessage }}
+</div>
+  
   <mat-card class="p-4 shadow-sm">
     <mat-card-header>
       <mat-card-title class="mb-3">{{ 'DOMAIN_PAGE.TITLE' | translate }}</mat-card-title>
     </mat-card-header>
+    <div class="language-container">
+  <button mat-stroked-button class="lang-btn" (click)="switchLanguage('tr')">
+    TR
+  </button>
+  <button mat-stroked-button class="lang-btn" (click)="switchLanguage('en')">
+    EN
+  </button>
+</div>
 
     <mat-card-content>
       <form [formGroup]="domainForm" (ngSubmit)="addDomain()" class="d-flex gap-2 align-items-center">
@@ -22,7 +30,7 @@
             {{ 'DOMAIN_PAGE.MESSAGES.INVALID_FORMAT' | translate }}
           </mat-error>
         </mat-form-field>
-
+            
         <button mat-raised-button color="primary" type="submit" [disabled]="!domainForm.valid" style="height: 56px; margin-bottom: 22px;">
           {{ 'DOMAIN_PAGE.ADD_BTN' | translate }}
         </button>
