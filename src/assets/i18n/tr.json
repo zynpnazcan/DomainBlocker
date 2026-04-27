@@ -6,8 +6,8 @@
     "ADD_BTN": "Listeye Ekle",
     "MESSAGES": {
       "SUCCESS_ADD": "Domain başarıyla engellendi!",
-      "ERROR_ALREADY_EXISTS": "Bu domain zaten engelli listesinde bulunuyor!",
-    "GENERIC_ERROR": "Bir hata oluştu.",
+      "DOMAIN_ALREADY_EXISTS": "Bu domain zaten engelli listesinde bulunuyor!",
+      "GENERIC_ERROR": "Bir hata oluştu.",
       "ERROR_ADD": "İşlem sırasında bir hata oluştu!",
       "REQUIRED_FIELD": "Bu alan boş bırakılamaz!",
       "INVALID_FORMAT": "Geçersiz domain formatı!",

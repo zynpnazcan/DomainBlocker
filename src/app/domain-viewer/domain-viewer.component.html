@@ -1,0 +1,15 @@
+<mat-card class="p-4 shadow-sm">
+  <mat-form-field appearance="outline" class="w-100 mb-3">
+    <mat-label>Listede Ara...</mat-label>
+    <input matInput (keyup)="applyFilter($event)">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="w-100">
+    <ng-container matColumnDef="domainName"><th mat-header-cell *matHeaderCellDef>Alan Adı</th><td mat-cell *matCellDef="let e">{{e.domainName}}</td></ng-container>
+    <ng-container matColumnDef="appliedAt"><th mat-header-cell *matHeaderCellDef>Tarih</th><td mat-cell *matCellDef="let e">{{e.appliedAt | date:'short'}}</td></ng-container>
+    <ng-container matColumnDef="actions"><th mat-header-cell *matHeaderCellDef>İşlem</th><td mat-cell *matCellDef="let e"><button mat-icon-button color="warn" (click)="remove(e)"><mat-icon>delete</mat-icon></button></td></ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>

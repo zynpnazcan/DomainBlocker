@@ -12,6 +12,7 @@ import { DomainService } from '../domain.service';
 import { Domain } from '../models/domain.model'; 
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component'; 
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -26,7 +27,8 @@ import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.compone
     MatInputModule,
     MatIconModule,
     MatCardModule,
-    TranslateModule    
+    TranslateModule ,
+    FormsModule  
   ],
   templateUrl: './domain-list.component.html',
   styleUrl: './domain-list.component.css'
@@ -62,6 +64,17 @@ export class DomainListComponent implements OnInit {
   loadDomains() {
     this.domainService.getAllDomains().subscribe(data => { this.domains = data; });
   }
+  searchText:string='';
+
+ get filteredDomains() {
+  return this.domains.filter(domain => {
+    const search = this.searchText.toLowerCase();
+    const nameMatch = domain.domainName.toLowerCase().includes(search);
+    const descMatch = domain.description?.toLowerCase().includes(search); 
+    
+    return nameMatch || descMatch;
+  });
+}
 
 addDomain() {
   if (this.domainForm.valid) {

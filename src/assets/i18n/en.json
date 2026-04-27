@@ -6,7 +6,7 @@
     "ADD_BTN": "Add to List",
     "MESSAGES": {
      "SUCCESS_ADD": "Domain successfully blocked!",
-      "ERROR_ALREADY_EXISTS": "This domain is already in the block list!",
+      "DOMAIN_ALREADY_EXISTS": "This domain is already in the block list!",
     "GENERIC_ERROR": "An error occurred.",
       "ERROR_ADD": "An error occurred during the process!",
       "SUCCESS_DELETE": "Block successfully removed for {{domain}}.",

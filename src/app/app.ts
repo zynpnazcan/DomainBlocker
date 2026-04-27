@@ -1,18 +1,27 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { DomainListComponent } from './domain-list/domain-list.component';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core'; 
+import { DomainAdderComponent } from './domain-adder/domain-adder.component';
+
 @Component({
   selector: 'app-root',
-  imports: [DomainListComponent,TranslateModule ],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [
+    CommonModule,
+    TranslateModule,      
+    DomainAdderComponent 
+  ],
+  template: `<app-domain-adder></app-domain-adder>`
 })
 export class App {
-  protected readonly title = signal('domain-blocker-frontend');
+  
   constructor(private translate: TranslateService) {
     this.translate.setDefaultLang('tr');
-
-    this.translate.use('tr'); 
+    this.translate.use('tr');
+    window.addEventListener('message', (event) => {
+    if (event.data.type === 'change-lang') {
+      this.translate.use(event.data.lang); 
+    }
+  });
   }
 }

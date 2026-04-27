@@ -1,0 +1,26 @@
+<div class="adder-wrapper">
+  <div *ngIf="responseMessage" [ngClass]="isSuccess ? 'alert-success' : 'alert-error'" class="message-banner">
+    <mat-icon>{{ isSuccess ? 'check_circle' : 'error' }}</mat-icon>
+    <span>{{ responseMessage }}</span>
+  </div>
+
+  <form [formGroup]="domainForm" (ngSubmit)="addDomain()" class="adder-form">
+    <div class="input-row">
+      <mat-form-field appearance="outline" class="domain-input-field">
+        <mat-label>{{ 'DOMAIN_PAGE.INPUT_LABEL' | translate }}</mat-label>
+        <input matInput formControlName="domainInput" [placeholder]="'DOMAIN_PAGE.PLACEHOLDER' | translate">
+        
+        <mat-error *ngIf="domainForm.get('domainInput')?.hasError('required')">
+          {{ 'DOMAIN_PAGE.MESSAGES.REQUIRED_FIELD' | translate }}
+        </mat-error>
+        <mat-error *ngIf="domainForm.get('domainInput')?.hasError('pattern')">
+          {{ 'DOMAIN_PAGE.MESSAGES.INVALID_FORMAT' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="domainForm.invalid" class="add-button">
+        {{ 'DOMAIN_PAGE.ADD_BTN' | translate }}
+      </button>
+    </div>
+  </form>
+</div>
