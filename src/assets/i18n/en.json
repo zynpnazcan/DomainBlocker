@@ -1,9 +1,12 @@
 {
+
   "DOMAIN_PAGE": {
     "TITLE": "Domain Blocking System",
     "INPUT_LABEL": "Enter Domain Name",
     "PLACEHOLDER": "e.g., facebook.com",
+    "SEARCH_PLACEHOLDER": "Search domain in list...",
     "ADD_BTN": "Add to List",
+    "DIVIDER": "Blocked Addresses",
     "MESSAGES": {
      "SUCCESS_ADD": "Domain successfully blocked!",
       "ERROR_ALREADY_EXISTS": "This domain is already in the block list!",
@@ -16,6 +19,7 @@
       "CONFIRM_DELETE": "Are you sure you want to unblock {{domain}}?",
       "SUCCESS_SERVER_UPDATED": "Server updated.",
       "ERROR_LABEL": "Error",
+      
       "SERVER_FAILED": "Server error occurred."
     },
     "CONFIRM_DIALOG": {

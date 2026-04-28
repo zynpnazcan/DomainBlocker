@@ -1,9 +1,12 @@
 {
+
   "DOMAIN_PAGE": {
     "TITLE": "Domain Engelleme Sistemi",
     "INPUT_LABEL": "Domain Adı Giriniz",
     "PLACEHOLDER": "Örn: facebook.com",
     "ADD_BTN": "Listeye Ekle",
+    "SEARCH_PLACEHOLDER": "Listede alan adı ara...",
+    "DIVIDER": "Engellenen Adresler",
     "MESSAGES": {
       "SUCCESS_ADD": "Domain başarıyla engellendi!",
       "ERROR_ALREADY_EXISTS": "Bu domain zaten engelli listesinde bulunuyor!",
@@ -16,6 +19,8 @@
       "ERROR_DELETE": "Engel kaldırılırken bir hata oluştu!",
       "SUCCESS_SERVER_UPDATED": "Sunucu güncellendi.",
       "ERROR_LABEL": "Hata",
+      
+      
       "SERVER_FAILED": "Sunucu hatası oluştu. "
     },
     "TABLE": {

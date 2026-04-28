@@ -1,78 +1,98 @@
 
-mat-card-header {
-  background-color: #003366; 
-  color: white;
-  margin: -1.5rem -1.5rem 1rem -1.5rem; 
-  padding: 1rem 1.5rem;
-  border-radius: 4px 4px 0 0;
+.list-wrapper {
+  padding: 24px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 mat-card {
+  border-radius: 12px !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1) !important;
+  overflow: hidden;
   border: 1px solid #e0e0e0;
-  border-radius: 8px !important;
-  overflow: hidden; 
+  width: 100%;
 }
 
-.mat-mdc-header-row {
-  background-color: #f8f9fa;
-  font-weight: bold;
+
+mat-card-header {
+  background-color: #003366; 
+  color: white;
+  padding: 20px 24px;
+  margin: 0;
 }
 
+mat-card-title {
+  color: white !important;
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+}
+
+/* FİLTRELEME */
+.search-container {
+  padding: 24px 16px 8px 16px;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+::ng-deep .search-container .mat-mdc-form-field {
+  width: 100% !important; 
+  max-width: 600px !important; 
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+  background-color: #fcfcfc !important;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  background: white;
+  padding: 0 16px 16px 16px;
+}
+
+table {
+  width: 100% !important; 
+}
 
 .mat-mdc-header-cell {
-  color: #333 !important;
-  border-bottom: 2px solid #dee2e6 !important;
+  background-color: #f4f7fa !important;
+  color: #003366 !important;
+  font-weight: 700 !important;
+  padding: 16px !important;
+  border-bottom: 2px solid #003366 !important;
+}
+
+/* Veri Hücreleri */
+.mat-mdc-cell {
+  padding: 14px 16px !important;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .mat-mdc-row:hover {
-  background-color: #f1f4f8;
-  cursor: default;
+  background-color: #f9fbff !important;
 }
 
-.mat-mdc-header-cell {
-  background-color: #f8f9fa !important; 
-  color: #003366 !important; 
-  font-weight: 700 !important; 
-  text-transform: uppercase;
-  font-size: 16px;
-  letter-spacing: 0.5px;
-  border-bottom: 2px solid #003366 !important; 
+.mat-mdc-button .mat-icon, 
+.mat-mdc-icon-button .mat-icon {
+  vertical-align: middle;
+  line-height: 24px;
+  font-size: 24px;
 }
 
-.mat-mdc-cell {
-  color: #444;
-  font-size: 14px;
+.delete-btn {
+  color: #d32f2f !important;
 }
 
-.language-container{
-  display: flex;
-  gap:12px;
-  margin-bottom: 20px;
-  justify-content: flex-start;
-
-}
-
-.lang-btn {
-  min-width: 50px;
-  height: 32px;
-  border-radius: 20px; 
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-}
-.alert-banner {
-  background-color: #d4edda; 
-  color: #155724;          
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid #c3e6cb;
-  border-radius: 4px;
+.message-banner {
+  padding: 12px 20px;
+  margin: 16px;
+  border-radius: 8px;
   text-align: center;
   font-weight: 500;
-  animation: fadeIn 0.5s;    
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+.alert-success { background-color: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
+.alert-error { background-color: #ffebee; color: #c62828; border: 1px solid #ffcdd2; }
