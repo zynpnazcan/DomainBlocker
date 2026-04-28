@@ -1,0 +1,12 @@
+{
+
+  "LOG_PAGE": {
+    "TITLE": "Real-Time System Logs",
+    "SUBTITLE": "You can monitor all activity in the system in real time from here.",
+    "REFRESH": "Refresh"
+  },
+  "LOG_ACTIONS": {
+    "DOMAIN_BLOCKED": "{{domain}} domain name has been blocked..",
+    "DOMAIN_UNBLOCKED": "{{domain}} domain name has been unblocked."
+  }
+}
