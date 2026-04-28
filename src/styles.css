@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+html, body { 
+  height: 100%; 
+  margin: 0; 
+  padding: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif !important;
+}
+
+::ng-deep .search-container .mat-mdc-form-field {
+  width: 100% !important; 
+  max-width: 600px !important; 
+}
+
+.mat-mdc-dialog-container {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+.mat-mdc-dialog-actions {
+  padding: 16px 24px !important; 
+  justify-content: flex-end !important;
+}
+
+.mat-mdc-dialog-actions button {
+  border-radius: 20px !important; 
+  padding: 8px 24px !important;
+  text-transform: none !important; 
+}
+
+.mat-mdc-dialog-actions button.mat-primary, 
+.mat-mdc-dialog-actions button:last-child {
+  background-color: #003366 !important; 
+  color: white !important;
+}
+
+.mat-mdc-dialog-actions button:first-child,
+.mat-mdc-dialog-actions button:not(.mat-primary) {
+  background-color: #e0e0e0 !important;
+  color: #333 !important;
+}
+
+.mat-icon {
+  font-family: 'Material Icons' !important;
+  color: inherit;
+}
+
+
+.mat-mdc-dialog-actions {
+  justify-content: flex-end !important;
+  padding: 20px !important;
+}
+
+.mat-mdc-dialog-actions button {
+  border-radius: 20px !important;
+  padding: 10px 25px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+}
+
+.mat-mdc-dialog-actions button.mat-primary, 
+.mat-mdc-dialog-actions button:last-child {
+  background-color: #003366 !important; 
+  color: white !important;
+}
+
+.mat-mdc-dialog-actions button:first-child {
+  background-color: #e0e0e0 !important;
+  color: #333 !important;
+}
+

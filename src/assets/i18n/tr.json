@@ -1,0 +1,52 @@
+{
+  "HEADER": {
+    "TITLE": "MERKEZİ DOMAİN YÖNETİM SİSTEMİ",
+    "DASHBOARD": "Panel",
+    "LOGS": "Sistem Logları"
+  },
+  "DASHBOARD": {
+    "PANEL_TITLE": "Domain Engelleme ",
+    "BLOCKED_LIST_TITLE": "ENGELLENEN ALAN ADLARI"
+  },
+ "LOG_PAGE": {
+    "TITLE": "Gerçek Zamanlı Loglar",
+    "SUBTITLE": "Sistemdeki tüm hareketleri buradan anlık olarak izleyebilirsiniz.",
+    "REFRESH": "Yenile"
+  },
+  "DOMAIN_PAGE": {
+    "TITLE": "Domain Engelleme Sistemi",
+    "INPUT_LABEL": "Domain Adı Giriniz",
+    "PLACEHOLDER": "Örn: facebook.com",
+    "ADD_BTN": "Listeye Ekle",
+    "SEARCH_PLACEHOLDER": "Listede alan adı ara...",
+    "DIVIDER": "Engellenen Adresler",
+    "MESSAGES": {
+      "SUCCESS_ADD": "Domain başarıyla engellendi!",
+      "DOMAIN_ALREADY_EXISTS": "Bu domain zaten engelli listesinde bulunuyor!",
+    "GENERIC_ERROR": "Bir hata oluştu.",
+      "ERROR_ADD": "İşlem sırasında bir hata oluştu!",
+      "REQUIRED_FIELD": "Bu alan boş bırakılamaz!",
+      "INVALID_FORMAT": "Geçersiz domain formatı!",
+      "CONFIRM_DELETE": "{{domain}} alan adının engelini kaldırmak istediğinize emin misiniz?",
+      "SUCCESS_DELETE": "{{domain}} için engel başarıyla kaldırıldı.",
+      "ERROR_DELETE": "Engel kaldırılırken bir hata oluştu!",
+      "SUCCESS_SERVER_UPDATED": "Sunucu güncellendi.",
+      "ERROR_LABEL": "Hata",
+      "SERVER_FAILED": "Sunucu hatası oluştu. "
+    },
+    "TABLE": {
+      "COL_DOMAIN": "Engellenmiş Alan Adı",
+      "COL_DATE": "Engellenme Tarihi",
+      "COL_ACTIONS": "İşlemler"
+    },
+    "CONFIRM_DIALOG": {
+      "YES": "Evet, Sil",
+      "NO": "Hayır"
+    }
+ 
+  },
+     "LOG_ACTIONS": {
+    "DOMAIN_BLOCKED": "{{domain}} alan adının erişimi engellendi.",
+    "DOMAIN_UNBLOCKED": "{{domain}} alan adının engeli kaldırıldı."
+  }
+}

@@ -1,0 +1,88 @@
+.navbar {
+  padding: 15px 30px;
+  background-color: #003366;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.navbar-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-controls {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-link {
+  background: transparent;
+  border: 1px solid transparent;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 15px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 🚀 AKTİF SAYFA BUTONU SİHRİ */
+.active-link {
+  background-color: white !important;
+  color: #003366 !important;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.separator {
+  width: 1px;
+  height: 25px;
+  background-color: rgba(255,255,255,0.3);
+}
+
+.lang-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.lang-btn {
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 1px solid white;
+}
+
+/* 🚀 AKTİF VE PASİF DİL BUTONU SİHRİ */
+.active-lang {
+  background: white;
+  color: #003366;
+}
+
+.passive-lang {
+  background: transparent;
+  color: white;
+}
+
+.passive-lang:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.main-content {
+  padding: 20px;
+}

@@ -1,0 +1,26 @@
+<nav class="navbar">
+  <h1 class="navbar-title">{{ 'HEADER.TITLE' | translate }}</h1>
+  
+  <div class="navbar-controls">
+    <div class="nav-links">
+      <button type="button" routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="nav-link">
+        {{ 'HEADER.DASHBOARD' | translate }}
+      </button>
+      
+      <button type="button" routerLink="/logs" routerLinkActive="active-link" class="nav-link">
+        {{ 'HEADER.LOGS' | translate }}
+      </button>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="lang-controls">
+      <button (click)="switchLang('tr')" [ngClass]="currentLang === 'tr' ? 'active-lang' : 'passive-lang'" class="lang-btn">TR</button>
+      <button (click)="switchLang('en')" [ngClass]="currentLang === 'en' ? 'active-lang' : 'passive-lang'" class="lang-btn">EN</button>
+    </div>
+  </div>
+</nav>
+
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>

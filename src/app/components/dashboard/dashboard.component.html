@@ -1,0 +1,11 @@
+<div class="dashboard-card">
+  <h3 class="panel-title">{{ 'DASHBOARD.PANEL_TITLE' | translate }}</h3>
+  
+  <app-domain-adder src="http://localhost:4201"></app-domain-adder>
+
+  <div class="divider">
+    <span class="divider-text">{{ 'DASHBOARD.BLOCKED_LIST_TITLE' | translate }}</span>
+  </div>
+
+  <app-domain-list src="http://localhost:4202"></app-domain-list>
+</div>
