@@ -32,5 +32,12 @@
       "YES": "Evet, Sil",
       "NO": "Hayır"
     }
+  },
+  "PAGINATION": {
+    "PREV": "Geri",
+    "NEXT": "İleri",
+    "PAGE": "Sayfa",
+    "TOTAL": "Toplam",
+    "RECORDS": "kayıt"
   }
 }

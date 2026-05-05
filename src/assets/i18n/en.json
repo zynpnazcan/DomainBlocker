@@ -31,5 +31,12 @@
       "COL_DATE": "Block Date",
       "COL_ACTIONS": "Actions"
     }
+  },
+  "PAGINATION": {
+    "PREV": "Previous",
+    "NEXT": "Next",
+    "PAGE": "Page",
+    "TOTAL": "Total",
+    "RECORDS": "records"
   }
 }

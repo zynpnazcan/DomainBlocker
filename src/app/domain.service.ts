@@ -21,10 +21,9 @@ export class DomainService {
 
   constructor(private http: HttpClient) {}
 
-  getAllDomains(): Observable<Domain[]> {
-    return this.http.get<Domain[]>(`${this.apiUrl}/all`);
+  getAllDomains(page: number = 0, size: number = 10, search: string = '') {
+   return this.http.get<any>(`http://localhost:8080/api/domain-block/all?page=${page}&size=${size}&search=${search}`);
   }
-
   unblockDomains(domain: Domain): Observable<ApiResponse<string>> {
     return this.http.delete<ApiResponse<string>>(`${this.apiUrl}/unblock?domain=${domain.domainName}`);
   }

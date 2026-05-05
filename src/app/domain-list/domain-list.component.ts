@@ -35,6 +35,12 @@ export class DomainListComponent implements OnInit, OnDestroy {
   searchText: string = '';
   responseMessage: string = '';
   isSuccess: boolean = false;
+  
+  // --- YENİ EKLENEN SAYFALAMA DEĞİŞKENLERİ ---
+  currentPage: number = 0;
+  pageSize: number = 10;
+  totalItems: number = 0;
+  totalPages: number = 0;
 
   private messageListener = (event: MessageEvent) => {
     const message = event.data;
@@ -71,20 +77,36 @@ export class DomainListComponent implements OnInit, OnDestroy {
   }
 
   loadDomains() {
-    this.domainService.getAllDomains().subscribe({
-      next: (data) => { 
-        this.domains = data; 
+    this.domainService.getAllDomains(this.currentPage, this.pageSize, this.searchText).subscribe({
+      next: (response: any) => { 
+        // Backend'den gelen JSON'ı (Map) parçalayıp değişkenlerimize atıyoruz
+        this.domains = response.domains;       
+        this.currentPage = response.currentPage; 
+        this.totalItems = response.totalItems;   
+        this.totalPages = response.totalPages;   
         this.cdr.detectChanges(); 
       },
-      error: (err) => console.error('Veriler çekilemedi:', err)
+      error: (err: any) => console.error('Veriler çekilemedi:', err)
     });
   }
-
-  get filteredDomains() {
-    const search = this.searchText.toLowerCase().trim();
-    if (!search) return this.domains;
-    return this.domains.filter(domain => domain.domainName.toLowerCase().includes(search));
+  //  Yeni Arama Metodu Ekle:
+  onSearch() {
+    this.currentPage = 0; // Arama yapılınca her zaman 1. sayfadan başlamalı
+    this.loadDomains();
   }
+  // --- YENİ EKLENEN SAYFA DEĞİŞTİRME METODU ---
+  changePage(newPage: number) {
+    if (newPage >= 0 && newPage < this.totalPages) {
+      this.currentPage = newPage;
+      this.loadDomains(); // Yeni sayfa numarasıyla backend'den veriyi tekrar çek
+    }
+  }
+
+  //get filteredDomains() {
+   // const search = this.searchText.toLowerCase().trim();
+   // if (!search) return this.domains;
+    //return this.domains.filter(domain => domain.domainName.toLowerCase().includes(search));
+ // }
 
   removeDomain(domain: Domain) {
     const confirmMessage = this.translate.instant('DOMAIN_PAGE.MESSAGES.CONFIRM_DELETE', { domain: domain.domainName });
