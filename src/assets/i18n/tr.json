@@ -48,5 +48,12 @@
      "LOG_ACTIONS": {
     "DOMAIN_BLOCKED": "{{domain}} alan adının erişimi engellendi.",
     "DOMAIN_UNBLOCKED": "{{domain}} alan adının engeli kaldırıldı."
+  },
+   "PAGINATION": {
+    "PREV": "Geri",
+    "NEXT": "İleri",
+    "PAGE": "Sayfa",
+    "TOTAL": "Toplam",
+    "RECORDS": "kayıt"
   }
 }

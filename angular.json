@@ -26,6 +26,9 @@
 				"build": {
 					"builder": "ngx-build-plus:browser",
 					"options": {
+						"allowedCommonJsDependencies": [
+                            "@angular-architects/module-federation"
+                        ],
 						"polyfills": [
                             "zone.js"
                         ],

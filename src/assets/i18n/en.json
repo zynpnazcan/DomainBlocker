@@ -48,5 +48,12 @@
    "LOG_ACTIONS": {
     "DOMAIN_BLOCKED": "Access to the domain {{domain}} has been blocked.",
     "DOMAIN_UNBLOCKED": "The block on the domain {{domain}} has been removed."
+  },
+  "PAGINATION": {
+    "PREV": "Previous",
+    "NEXT": "Next",
+    "PAGE": "Page",
+    "TOTAL": "Total",
+    "RECORDS": "records"
   }
 }
