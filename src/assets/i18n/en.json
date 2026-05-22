@@ -2,11 +2,18 @@
  "HEADER": {
     "TITLE": "Domain Blocking System",
     "DASHBOARD": "Dashboard",
-    "LOGS": "Logs"
+    "LOGS": "Logs",
+    "STATISTICS": "Statistics"
   },
   "DASHBOARD": {
     "PANEL_TITLE": "Domain Blocking Panel",
-    "BLOCKED_LIST_TITLE": "BLOCKED DOMAINS"
+    "BLOCKED_LIST_TITLE": "BLOCKED DOMAINS",
+    "TITLE": "System Analysis Dashboard",
+    "TOTAL_BLOCKED": "Total Blocked",
+    "TOP_EXTENSION": "Most Blocked Extension",
+    "SYSTEM_STATUS": "System Status",
+    "CHART_TITLE": "Extension Based Distribution",
+    "DOWNLOAD": "Download Chart"
   },
  "LOG_PAGE": {
     "TITLE": "Real-time Logs",

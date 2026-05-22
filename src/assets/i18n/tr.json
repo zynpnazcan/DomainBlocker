@@ -2,11 +2,18 @@
   "HEADER": {
     "TITLE": "MERKEZİ DOMAİN YÖNETİM SİSTEMİ",
     "DASHBOARD": "Panel",
-    "LOGS": "Sistem Logları"
+    "LOGS": "Sistem Logları",
+    "STATISTICS": "İstatistikler"
   },
   "DASHBOARD": {
     "PANEL_TITLE": "Domain Engelleme ",
-    "BLOCKED_LIST_TITLE": "ENGELLENEN ALAN ADLARI"
+    "BLOCKED_LIST_TITLE": "ENGELLENEN ALAN ADLARI",
+    "TITLE": "Sistem Analiz Paneli",
+    "TOTAL_BLOCKED": "Toplam Engellenen",
+    "TOP_EXTENSION": "En Çok Engellenen Uzantı",
+    "SYSTEM_STATUS": "Sistem Durumu",
+    "CHART_TITLE": "Uzantı Bazlı Dağılım Grafiği",
+    "DOWNLOAD": "Grafiği İndir"
   },
  "LOG_PAGE": {
     "TITLE": "Gerçek Zamanlı Loglar",
